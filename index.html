@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <title>Placementcell</title>
+    <script src="library/javascript/jquery-3.1.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="library/semantic/semantic.css" />
+    <script src="library/semantic/semantic.js"></script>
+    <script src="library/javascript/angular.min.js"></script>
+    <script src="library/javascript/angular-route.js"></script>
+    <script src="home.js"></script>
+    <link rel="stylesheet" href="library/css/homepage.css" />
+
+    <script>
+        $(document).ready(function() {
+            $('#login').on('click', function() {
+                $('#loginSignUp').modal('show');
+            });
+            $('#signupSection').hide();
+            $('#signinSelector').on('mouseover', function() {
+                $('#signupSection').hide();
+                $('#loginSection').show();
+                $(this).addClass('active');
+                $('#signupSelector').removeClass('active');
+            });
+
+            $('#signupSelector').on('mouseover', function() {
+                $('#signupSection').show();
+                $('#loginSection').hide();
+                $(this).addClass('active');
+                $('#signinSelector').removeClass('active');
+            });
+            $('#signinSelector').on('click', function() {
+                $('#signupSection').hide();
+                $('#loginSection').show();
+                $(this).addClass('active');
+                $('#signupSelector').removeClass('active');
+            });
+
+            $('#signupSelector').on('click', function() {
+                $('#signupSection').show();
+                $('#loginSection').hide();
+                $(this).addClass('active');
+                $('#signinSelector').removeClass('active');
+            });
+
+            $('.login-block')
+                .on('mouseover', function() {
+                    $(this).transition('shake');
+                });
+
+        });
+    </script>
+</head>
+
+<body ng-app="homePage">
+
+  <div class="ui fluid container homeparallax">
+  </div>
+    <!--header Menu start-->
+    <div class="ui transparent borderless main fixed top menu" ng-controller="mainMenu">
+        <div class="ui fluid container" style="font-size: 15px;">
+            <div class="float left header item">Placementcell</div>
+
+            <div ng-repeat="menuItem in menuItems">
+                <a class="item" href="#{{menuItem.link}}">{{menuItem.item}}</a>
+            </div>
+        </div>
+    </div>
+    <!--header menu end-->
+    <div class="login-block">
+        <div class="ui segment transparent">
+            <div class="content">
+                <div class="header">
+                    Student Login section
+                </div>
+                <div class="ui divider"></div>
+            </div>
+            <div class="ui buttons">
+              <button class="ui green inverted button" id="login">Sign in</button>
+              <div class="or"></div>
+              <button class="ui blue inverted button" id="login">Sign up</button>
+            </div>
+
+        </div>
+    </div>
+    <!--Student login section modal-->
+    <div id="loginSignUp" class="ui small modal">
+        <div class="ui blue top attatched two item tabular menu">
+            <a id="signinSelector" class="item active">
+            Sign in
+          </a>
+            <a id="signupSelector" class="item">
+            Sign up
+          </a>
+        </div>
+        <div class="ui bottom attatched segment">
+            <!--login Section-->
+            <div id="loginSection" class="ui form">
+                <div class="field">
+                    <input type="text" name="usn" class="ui input" placeholder="Enter your USN" require/>
+                </div>
+                <div class="field">
+                    <input type="text" name="password" class="ui input" placeholder="Enter your password" required/>
+                </div>
+                <div class="ui divider">
+                </div>
+                <div id="login" class="ui blue inverted button">
+                    <i class="check circle outline icon"></i> Login
+                </div>
+                <div id="cancel" class="ui blue inverted button">
+                    <i class="remove circle outline icon"></i> Cancel
+                </div>
+            </div>
+            <!--login section end-->
+            <!--Sign up section-->
+            <div id="signupSection" class="ui form">
+                <div class="field">
+                    <input type="text" name="usn" class="ui input" placeholder="Enter your USN" required/>
+                </div>
+                <div class="field">
+                    <input type="email" name="email" class="ui input" placeholder="Enter your email" required/>
+                </div>
+                <div class="ui divider">
+                </div>
+                <div class="field">
+                    <label class="ui violet inverted label">By Signing up you agree to our Terms and Conditions and Data usage Policies.</label>
+                </div>
+                <div id="signup" class="ui blue inverted button">
+                    <i class="check circle outline icon"></i> Sign up
+                </div>
+                <div id="cancel" class="ui blue inverted button">
+                    <i class="remove circle outline icon"></i> Cancel
+                </div>
+
+            </div>
+
+            <!--sign up section end-->
+        </div>
+
+
+    </div>
+
+    <!--Student login section modal end-->
+
+    <!--footer start-->
+    <div class="ui fluid container custom-footer">
+        <div class="ui center aligned container">
+            <div class="ui stackable inverted divided grid">
+                <div class="three wide column">
+                    <h4 class="ui inverted header">Contact</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Contact Admin</a>
+                        <a href="#" class="item">Contact Developers</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header">Developers</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Suggest something.</a>
+                        <a href="#" class="item">Report bugs</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header">Comapany</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">How It Works!</a>
+                        <a href="#" class="item">About US</a>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header">Placementcell.com</h4>
+                    <p>Hiring platform for freshers</p>
+                </div>
+            </div>
+            <div class="ui inverted section divider"></div>
+            <p>All Rights Reserved &copy; 2016
+                <strong><a href="#">Placementcell Inc.</a></strong> | Made with <i class="icon small inverted heart"></i> in Banglore.
+
+        </div>
+        <!--footer end-->
+</body>
+
+</html>

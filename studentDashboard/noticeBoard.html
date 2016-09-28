@@ -1,0 +1,15 @@
+<div ng-controller="MessagesController">
+    <div class="contact-header">Placement Noticeboard</div>
+    <div class="ui divider">
+    </div>
+    <div class="ui white message" ng-repeat="message in messages">
+        <pre><p class="header"> Title : {{ message.messageTitle }} </p></pre>
+        <pre><b><p class="sub header"> Author : {{ message.messageAuthor }} </p></b></pre>
+        <div class="ui divider"></div>
+        <pre><i class="content"> {{ message.messageBody }} </i></pre>
+        <div class="ui divider"></div>
+        <div class="footer left floated">
+          {{ message.messageDate }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+
+
+.main-body {
+  margin-top: 4em;
+}
+
+.custom-sidebar {
+  position: fixed;
+}
+
+.custom-footer {
+  margin-top: 0.5%;
+  position: inherit;
+  padding: 1.5%;
+  width: 100%;
+  bottom: 0;
+  color: #fff;
+  background: #000;
+  text-align: center;
+  border-top: 1px solid #E5E5E5;
+}
+
+
+.ui.sidebar.custom {
+top: 11%;
+ position: fixed;
+}
+
+.custom-content {
+  width: 80%;
+  border : 1px rgba(0, 0, 0, 0.2) solid;
+  border-radius: 2px;
+  box-shadow: 2px 2px 5px #888888;
+  padding: 1%;
+}
