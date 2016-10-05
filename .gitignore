@@ -1,3 +1,6 @@
+# Express node modules
+server/node_modules
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
