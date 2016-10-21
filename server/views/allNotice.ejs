@@ -1,18 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Post Notice</title>
+
+<head>
+    <title>Post Notice | Placementcell</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1>Notice board</h1>
-    <%notices.forEach(function(notice){%>
-      <div style="border:1px solid black; padding:10px; margin-bottom:10px">
-        <h2><%= notice.title%></h2>
-        <p><%= notice.content%></p>
-        <h3><%= notice.author %><i><%= notice.date %></i></h3>
-      </div>
-    <%})%>    
-    <a href="/new">Add a new notice</a>
-  </body>
+    <link rel='stylesheet' href='/library/semantic/semantic.css' />
+    <script type="text/javascript" src="/library/javascript/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="/library/semantic/semantic.js"></script>
+</head>
+
+<body>
+    <div class="ui container notice-header">
+        <div class="ui center aligned segment">
+            <div class="ui header">
+                <h2>Notice Board</h2>
+            </div>
+        </div>
+        <div class="ui divider">
+        </div>
+        <div class="ui two stackable cards">
+            <%notices.forEach(function(notice){%>
+                <div class="green card" style="overflow-x:hidden;">
+                    <div class="content">
+                        <div class="header">
+                            <%= notice.title%>
+                        </div>
+                        <div class="meta">
+                            <span class="sub header">
+                                <%= notice.author %>
+                            </span>
+                            <span class="right floated time">
+                <%= notice.date %>
+              </span>
+                        </div>
+                        <div class="ui divider">
+
+                        </div>
+                        <div class="description">
+                            <%- notice.content%>
+                        </div>
+                    </div>
+                </div>
+                <%})%>
+        </div>
+        <div class="ui divider">
+        </div>
+        <div class="ui basic blue button">
+            <a href="/new">Add a new notice</a>
+        </div>
+    </div>
+</body>
+
 </html>
