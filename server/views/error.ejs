@@ -1,3 +1,25 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='/library/semantic/semantic.css' />
+    <script type="text/javascript" src="/library/javascript/jquery-3.1.0.js"></script>
+    <title>404 - Page Not Found | Placementcell</title>
+    <script type="text/javascript" src="/library/semantic/semantic.js"></script>
+  </head>
+  <body>
+    <div class="ui container inverted segment">
+      <div class="ui error message">
+        <div class="ui header">
+          <h1><%= message %></h1>
+        </div>
+        <div class="ui sub header">
+          <h2><%= error.status %></h2>
+        </div>
+        <p class="ui content">
+          <pre><%= error.stack %></pre>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
