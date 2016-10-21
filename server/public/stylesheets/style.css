@@ -3,6 +3,13 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.index-content {
+  margin: 10em;
+}
+.notice-header {
+  margin-top: 1em;
+}
+
+.new-notice {
+margin: 1em;
 }
